@@ -7,77 +7,38 @@ package relacionesentreclases;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import relacionesentreclases.EP_1.Perro;
-import relacionesentreclases.EP_1.Persona;
+import relacionesentreclases.EP_2.Juego;
+import relacionesentreclases.EP_2.Jugador;
+import relacionesentreclases.EP_2.Revolver;
+import relacionesentreclases.EP_2.JuegoServicio;
+import relacionesentreclases.EP_2.JugadorServicio;
+import relacionesentreclases.EP_2.RevolverServicio;
 
 /**
  *
  * @author javie
  */
 public class main {
-    static List<Persona> personas = new ArrayList(Arrays.asList(
-            new Persona("Luis", "Luna", 23, "111111111111"),
-            new Persona("Javier", "Arellano", 33, "222222222222")
-    ));
-
-    static List<Perro> perros = new ArrayList(Arrays.asList(
-            new Perro("Scooby", "Gran Danés", 3, 30.5),
-            new Perro("Solobino", "Chihuahua", 10, 100.5)
-    ));
     
-    static Scanner scan = new Scanner(System.in).useDelimiter("\n");
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        asignarPerros();
-        
-        mostrarDatos();
-    }
-    
-    public static void asignarPerros() {
-        String nombrePerro = "";
-        boolean perroEncontrado = true;
-        
-        for (Persona persona : personas) {
-            System.out.println("¿Qué perro de la siguiente lista le quieres asignar a " + persona.getNombre() + "?");
-            
-            for (Perro perro : perros) {
-                System.out.println(perro.toString());                
-            }
-            
-            nombrePerro = scan.nextLine();
-                        
-            for (Perro perro : perros) {
-                if (nombrePerro.equals(perro.getNombre())) {
-                    persona.setPerro(perro);
-                    perroEncontrado = true;
-                    perros.remove(perro);
-                    System.out.println(nombrePerro + " fue removido de la lista");
-                    break;
-                } else {
-                    perroEncontrado = false;
-                }
-            }
-            
-            if (!perroEncontrado) {
-                System.out.println("No se encontró el perro con nombre " + nombrePerro);
-            }
-            System.out.println("");
-        }
-    }
-    
-    public static void mostrarDatos() {
-        for (Persona persona : personas) {
-            System.out.println(persona.toString());
-        }
-                
-    }
-    
-    
-    
+       RevolverServicio rs = new RevolverServicio();
+       JuegoServicio js = new JuegoServicio();
+       JugadorServicio jrs = new JugadorServicio();
+       
+       ArrayList<Jugador> jugadores = new ArrayList(Arrays.asList(
+            new Jugador(1, "JugadorA"),
+            new Jugador(2, "JugadorB"),
+            new Jugador(3, "JugadorC"),
+            new Jugador(4, "JugadorD"),
+            new Jugador(5, "JugadorE"),
+            new Jugador(6, "JugadorF")
+        ));
+       Revolver revolver = rs.llenarRevolver();
+       Juego juego = js.llenarJuego(jugadores, revolver);
+       
+       js.ronda(juego);
+    } 
 }
