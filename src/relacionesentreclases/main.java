@@ -5,14 +5,8 @@
  */
 package relacionesentreclases;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import relacionesentreclases.EP_2.Juego;
-import relacionesentreclases.EP_2.Jugador;
-import relacionesentreclases.EP_2.Revolver;
-import relacionesentreclases.EP_2.JuegoServicio;
-import relacionesentreclases.EP_2.JugadorServicio;
-import relacionesentreclases.EP_2.RevolverServicio;
+import java.util.Scanner;
+import relacionesentreclases.EP_3.CartaEspanolaServicio;
 
 /**
  *
@@ -24,21 +18,60 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       RevolverServicio rs = new RevolverServicio();
-       JuegoServicio js = new JuegoServicio();
-       JugadorServicio jrs = new JugadorServicio();
+       CartaEspanolaServicio ces = new CartaEspanolaServicio();
+       Scanner scan = new Scanner(System.in).useDelimiter("\n");
+       int eleccion;
+       boolean valida = false;
        
-       ArrayList<Jugador> jugadores = new ArrayList(Arrays.asList(
-            new Jugador(1, "JugadorA"),
-            new Jugador(2, "JugadorB"),
-            new Jugador(3, "JugadorC"),
-            new Jugador(4, "JugadorD"),
-            new Jugador(5, "JugadorE"),
-            new Jugador(6, "JugadorF")
-        ));
-       Revolver revolver = rs.llenarRevolver();
-       Juego juego = js.llenarJuego(jugadores, revolver);
+       ces.inicializarBaraja();
        
-       js.ronda(juego);
+       System.out.println("¿Qué acción quieres realizar? (elige un número del 1 al 7)");
+       
+        do {
+            System.out.println("" +
+                    "1. Barajar\n" +
+                    "2. Siguiente Carta\n" +
+                    "3. Cartas Disponibles\n" +
+                    "4. Dar Cartas\n" +
+                    "5. Cartas Montón\n" +
+                    "6. Mostrar Baraja\n" +
+                    "7. Terminar Juego\n"
+            );
+            eleccion = scan.nextInt();
+            
+            switch(eleccion) {
+                case 1:
+                    ces.barajar();
+                    break;
+                case 2:
+                    ces.siguienteCarta();
+                    break;
+                case 3:
+                    ces.cartasDisponibles();
+                    break;
+                case 4:
+                    System.out.println("¿Cúantas cartas quieres?");
+                    int cartasPedidas = scan.nextInt();
+                    
+                    ces.darCartas(cartasPedidas);
+                    break;
+                case 5:
+                    ces.cartasMonton();
+                    break;
+                case 6:
+                    ces.mostrarBaraja();
+                    break;
+                case 7:
+                    valida = true;
+                    System.out.println("El juego ha sido terminado");
+                    break;
+                default:
+                     System.out.println("No se eligio una opción válida, vuelve a intentarlo");
+                     valida = false;
+            }
+        } while (!valida);
+        
+       
+             
     } 
 }

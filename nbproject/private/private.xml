@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_3/Numero.java</file>
             <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/main.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_2/Entidades/Revolver.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_2/Entidades/Juego.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_2/Servicios/JuegoServicio.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_2/Servicios/RevolverServicio.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_2/Entidades/Jugador.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_2/Servicios/JugadorServicio.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_3/Palo.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_3/CartaEspanola.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/RelacionesEntreClases/src/relacionesentreclases/EP_3/CartaEspanolaServicio.java</file>
         </group>
     </open-files>
 </project-private>
