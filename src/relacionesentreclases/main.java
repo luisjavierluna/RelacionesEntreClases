@@ -5,7 +5,10 @@
  */
 package relacionesentreclases;
 
-import relacionesentreclases.EE_1.ServicioPersona;
+import relacionesentreclases.EE_2.ServicioCine;
+import relacionesentreclases.EE_2.ServicioEspectador;
+import relacionesentreclases.EE_2.ServicioPelicula;
+
 
 /**
  *
@@ -17,11 +20,13 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) { 
-        ServicioPersona sp = new ServicioPersona();
+        ServicioCine sc = new ServicioCine();
         
-        // sp.mostrarPerros();
-        sp.asignarPerros();
         
-        sp.mostrarDatos();
+        for (int i = 0; i < 100; i++) {
+            sc.mostrarTabla(sc.ubicarEspectadores());
+            
+        }
+        
     } 
 }
