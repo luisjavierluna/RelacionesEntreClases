@@ -5,10 +5,8 @@
  */
 package relacionesentreclases;
 
-import relacionesentreclases.EE_2.ServicioCine;
-import relacionesentreclases.EE_2.ServicioEspectador;
-import relacionesentreclases.EE_2.ServicioPelicula;
-
+import relacionesentreclases.EE_3.Servicios.CuotaServicio;
+import relacionesentreclases.EE_3.Servicios.PolizaServicio;
 
 /**
  *
@@ -20,13 +18,17 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) { 
-        ServicioCine sc = new ServicioCine();
+        PolizaServicio ps = new PolizaServicio();
+        CuotaServicio cs = new CuotaServicio();
         
+        // ps.registrarPoliza();
         
-        for (int i = 0; i < 100; i++) {
-            sc.mostrarTabla(sc.ubicarEspectadores());
-            
-        }
+        // System.out.println(ps.polizas.toString());
         
+        cs.registrarCuotas();
+        
+        System.out.println(cs.cuotas.toString()); 
+        
+        // cs.consultarCuota();
     } 
 }
