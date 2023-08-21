@@ -5,8 +5,10 @@
  */
 package relacionesentreclases;
 
-import relacionesentreclases.EE_3.Servicios.CuotaServicio;
-import relacionesentreclases.EE_3.Servicios.PolizaServicio;
+import java.util.ArrayList;
+import relacionesentreclases.EE_4.Entidades.Alumno;
+import relacionesentreclases.EE_4.Entidades.Simulador;
+import relacionesentreclases.EE_4.Entidades.Voto;
 
 /**
  *
@@ -18,17 +20,21 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) { 
-        PolizaServicio ps = new PolizaServicio();
-        CuotaServicio cs = new CuotaServicio();
+        Simulador simulador = new Simulador();
         
-        // ps.registrarPoliza();
         
-        // System.out.println(ps.polizas.toString());
+        ArrayList<Alumno> alumnos = simulador.generarListadoAlumnos();
         
-        cs.registrarCuotas();
+        ArrayList<Voto> votos = simulador.votacion(alumnos);
         
-        System.out.println(cs.cuotas.toString()); 
+        simulador.mostrarVotos(votos);
         
-        // cs.consultarCuota();
+        simulador.recuentoVotos(alumnos);
+        
+        ArrayList<Alumno> facilitadores = simulador.crearFacilitadores(alumnos);
+        
+        // simulador.mostrarFacilitadores(facilitadores);
+        
+        
     } 
 }
